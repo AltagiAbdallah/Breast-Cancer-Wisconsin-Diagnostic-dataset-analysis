@@ -112,68 +112,58 @@ _Example included in the `figures/` directory._
 - Non-parametric Wilcoxon tests confirm the same findings.  
 
 ---
-
 ## Visualizations
 
-This section presents all key plots used in the analysis. Each figure highlights a different aspect of the differences between benign and malignant tumors based on the WDBC dataset.
+This section presents all key plots used in the analysis. Each figure highlights diagnostic differences between benign and malignant tumors using the WDBC dataset.
 
 ---
 
-###  Figure 1: Distribution of Mean Radius by Diagnosis
-
-![Figure 1: Distribution of Mean Radius by Diagnosis](figures/distribution_radius_worst.png)
-
-> **Caption**: Malignant tumors have a visibly right-skewed distribution with higher radius values compared to benign ones.
+### 📌 Figure 1: Distribution of Mean Radius by Diagnosis  
+![Figure 1 Distribution of Mean Radius by Diagnosis](figures/distribution_radius_worst.png)  
+> Malignant tumors have larger radius values with a right-skewed distribution.
 
 ---
 
-###  Figure 2: Boxplot of Concave Points (Worst) by Diagnosis
-
-![Figure 2: Boxplot of Concave Points Worst](figures/boxplot_concave_points_worst.png)
-
-> **Caption**: Malignant cases show significantly higher values and variability in `concave_points_worst`.
+### 📌 Figure 2: Boxplot of Concave Points Worst  
+![Figure 2 Boxplot of Concave Points Worst](figures/boxplot_concave_points_worst.png)  
+> Malignant tumors exhibit significantly more extreme concavities than benign.
 
 ---
 
-###  Figure 3: Correlation Heatmap of Top Features
-
-![Figure 3: Feature Correlation Heatmap](figures/feature_correlation_heatmap.png)
-
-> **Caption**: Size-related features (`radius_worst`, `perimeter_worst`, `area_worst`) are strongly correlated. `concave_points_worst` also shows strong correlation with malignancy.
+### 📌 Figure 3: Nuclear Contour Irregularity  
+![Figure 3 Nuclear Contour Irregularity in Malignant Tumors](figures/concavity_distribution.png)  
+> Malignant tumors concentrate at higher `concavity_worst` values with minimal overlap.
 
 ---
 
-### Figure 4: Scatterplot Matrix of Top Predictive Features
+### 📌 Figure 4: Nuclear Size Distribution by Diagnosis  
+![Figure 4 Nuclear Size Distribution by Diagnosis](figures/nuclear_size_distribution.png)  
+> 58% larger modal radius in malignant samples compared to benign ones.
 
-![Figure 4: Scatterplot Matrix](figures/scatter_matrix.png)
-
-> **Caption**: Scatterplot matrix of the top 3 predictive features by diagnosis class. Clear separation is visible across feature combinations.
+---
+### 📌 Figure 5: Correlation Matrix of Top Predictive Features  
+![Figure 5 Correlation Matrix of Top Predictive Features](figures/feature_correlation_matrix.png)  
+> Strong collinearity between size-related features and high diagnostic relevance of `concave_points_worst`.
 
 ---
 
-### Figure 5: ROC Curves for Top Features
-
-![Figure 5: ROC Curves](figures/roc_curves.png)
-
-> **Caption**: ROC curves for `concave_points_worst`, `perimeter_worst`, and `radius_worst`. All features show strong diagnostic power (AUC close to 1).
+### 📌 Figure 6: ROC Curve Analysis  
+![Figure 6 ROC Curve Analysis](figures/roc_curves.png)  
+> ROC curves for top features show high AUC, confirming their predictive performance.
 
 ---
 
-### Figure 6: Perimeter Distribution by Tumor Type
-
-![Figure 6: Perimeter Distribution](figures/distribution_perimeter_worst.png)
-
-> **Caption**: Malignant tumors show a wider spread and higher values in `perimeter_worst` compared to benign cases.
+### 📌 Figure 6: Perimeter Distribution by Tumor Type  
+![Figure 7 Perimeter Distribution by Tumor Type](figures/distribution_perimeter_worst.png)  
+> Malignant tumors show higher perimeter values with wider spread.
 
 ---
 
-### Figure 7: Multivariate Feature Relationships
+### 📌 Figure 8: Multivariate Feature Relationships  
+![Figure 8 Multivariate Feature Relationships](figures/multivariate_relationships.png)  
+> Top predictive features cluster distinctly by tumor type, enhancing classification clarity.
 
-![Figure 7: Multivariate Feature Relationships](figures/multivariate_relationships.png)
 
-> **Caption**: Overview of how selected features interact across diagnosis categories. Malignant tumors cluster in higher-value regions for all top predictors.
-
----
 
 ## Repository Structure
 
