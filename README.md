@@ -119,7 +119,7 @@ This section presents all key plots used in the analysis. Each figure highlights
 ---
 
 ### 📌 Figure 1: Distribution of Mean Radius by Diagnosis  
-![Figure 1 Distribution of Mean Radius by Diagnosis](figures/distribution_radius_worst.png)  
+![Figure 1 Distribution of Mean Radius by Diagnosis](figures/Figure_1_Distribution_of_Mean_Radius_by_Diagnosis.png)  
 > Malignant tumors have larger radius values with a right-skewed distribution.
 
 ---
