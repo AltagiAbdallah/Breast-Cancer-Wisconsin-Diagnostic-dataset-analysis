@@ -125,42 +125,42 @@ This section presents all key plots used in the analysis. Each figure highlights
 ---
 
 ### 📌 Figure 2: Boxplot of Concave Points Worst  
-![Figure 2 Boxplot of Concave Points Worst](figures/boxplot_concave_points_worst.png)  
+![Figure 2 Boxplot of Concave Points Worst](figures/Figure_2_Boxplot_of_Concave_Points_Worst.png)  
 > Malignant tumors exhibit significantly more extreme concavities than benign.
 
 ---
 
 ### 📌 Figure 3: Nuclear Contour Irregularity  
-![Figure 3 Nuclear Contour Irregularity in Malignant Tumors](figures/concavity_distribution.png)  
+![Figure 3 Nuclear Contour Irregularity in Malignant Tumors](figures/Figure_3_Nuclear_Contour_Irregularity_in_Malignant_Tumors.png)  
 > Malignant tumors concentrate at higher `concavity_worst` values with minimal overlap.
 
 ---
 
 ### 📌 Figure 4: Nuclear Size Distribution by Diagnosis  
-![Figure 4 Nuclear Size Distribution by Diagnosis](figures/nuclear_size_distribution.png)  
+![Figure 4 Nuclear Size Distribution by Diagnosis](figures/Figure_4_Nuclear_Size_Distribution_by_Diagnosis.png)  
 > 58% larger modal radius in malignant samples compared to benign ones.
 
 ---
 ### 📌 Figure 5: Correlation Matrix of Top Predictive Features  
-![Figure 5 Correlation Matrix of Top Predictive Features](figures/feature_correlation_matrix.png)  
+![Figure 5 Correlation Matrix of Top Predictive Features](figures/Figure_5_Correlation_Matrix_of_Top_Predictive_Features.png)  
 > Strong collinearity between size-related features and high diagnostic relevance of `concave_points_worst`.
 
 ---
 
 ### 📌 Figure 6: ROC Curve Analysis  
-![Figure 6 ROC Curve Analysis](figures/roc_curves.png)  
+![Figure 6 ROC Curve Analysis](figures/Figure_6_ROC_Curve_Analysis.png)  
 > ROC curves for top features show high AUC, confirming their predictive performance.
 
 ---
 
 ### 📌 Figure 6: Perimeter Distribution by Tumor Type  
-![Figure 7 Perimeter Distribution by Tumor Type](figures/distribution_perimeter_worst.png)  
+![Figure 7 Perimeter Distribution by Tumor Type](figures/Figure_7_Perimeter_Distribution_by_Tumor_Type.png)  
 > Malignant tumors show higher perimeter values with wider spread.
 
 ---
 
 ### 📌 Figure 8: Multivariate Feature Relationships  
-![Figure 8 Multivariate Feature Relationships](figures/multivariate_relationships.png)  
+![Figure 8 Multivariate Feature Relationships](figures/Figure_8_Multivariate_Feature_Relationships.png)  
 > Top predictive features cluster distinctly by tumor type, enhancing classification clarity.
 
 
