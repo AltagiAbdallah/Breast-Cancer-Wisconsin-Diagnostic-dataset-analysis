@@ -1,5 +1,5 @@
 
-# Exploratory Analysis of Breast Cancer Diagnostic Features
+# Breast-Cancer-Quantitative-Analysis
 
 This repository contains an R-based analysis of the **Wisconsin Diagnostic Breast Cancer (WDBC)** dataset. The project uses statistical programming and data visualization techniques to explore which features are most predictive of cancer malignancy.
 
