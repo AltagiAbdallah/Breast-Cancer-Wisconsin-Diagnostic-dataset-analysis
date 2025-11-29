@@ -113,6 +113,7 @@ This section presents all key plots used in the analysis. Each figure highlights
 ├── wdbc_analysis.R              # Main R script
 ├── wdbc.data                    # Dataset file
 ├── wdbc.names                   # Attribute names and description
+├── Quantitative Analysis of Diagnostic Features_ Statistical Profiling of Nuclear Morphology in Breast Cancer using R.pdf
 └── figures/
     ├── distribution_radius_worst.png
     ├── boxplot_concave_points_worst.png
