@@ -183,6 +183,14 @@ This section presents all key plots used in the analysis. Each figure highlights
     └── multivariate_relationships.png
 ```
 
+## 👥 Contributors
+
+| Name | GitHub |
+| :--- | :--- |
+| **Altagi Analyst** | [@AltagiAbdallah](https://github.com/AltagiAbdallah) |
+| **Wejdan Salih** | [@wejdan-salih](https://github.com/wejdan-salih) |
+
+
 ## License
 
 This project is for educational purposes under the Statistical Programming course (CCS2233) at Albukhary International University.
