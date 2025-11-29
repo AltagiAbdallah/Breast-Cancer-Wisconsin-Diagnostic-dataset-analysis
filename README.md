@@ -1,115 +1,55 @@
+> **Quantitative Analysis of Diagnostic Features: Statistical Profiling of Nuclear Morphology in Breast Cancer using R**
 
-# Breast-Cancer-Quantitative-Analysis
+## Executive Summary
+This project leverages statistical programming in **R** to analyze the **Wisconsin Diagnostic Breast Cancer (WDBC)** dataset. By processing data from **568 patients**, we identified specific cellular irregularities that serve as strong predictors of cancer.
 
-This repository contains an R-based analysis of the **Wisconsin Diagnostic Breast Cancer (WDBC)** dataset. The project uses statistical programming and data visualization techniques to explore which features are most predictive of cancer malignancy.
-
----
-
-## Dataset
-
-- **Source**: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic))
-- **Instances**: 569  
-- **Features**: 30 numerical + diagnosis (Benign or Malignant)
+**Key Finding:** The number of severe concave contours (*concave_points_worst*) is the strongest single indicator of malignancy. Malignant tumors exhibit **145% higher irregularity** than benign cases (Effect Size: *d* = 2.69).
 
 ---
 
-## Objectives
-
-1. Identify which tumor features are most associated with malignancy.  
-2. Compare benign and malignant cases using summary statistics and statistical tests.  
-3. Visualize the most informative features to aid clinical interpretation.  
-
----
-
-## Required Packages
-
-Before running the analysis, install the required R packages:
-
-```r
-install.packages(c("ggplot2", "dplyr", "tidyr", "knitr", "corrplot", "GGally", "effectsize", "pROC", "gridExtra"))
-```
+## Table of Contents
+- Project Overview
+- Key Insights & Findings
+- Methodology
+- Visualizations
+- Repository Structure
+- Contributors
 
 ---
 
-## Data Preparation
+## Project Overview
+Diagnosis of breast cancer traditionally relies on subjective visual interpretation. This project aims to bridge the gap between raw data and clinical insight by achieving three goals:
+1.  **Feature Identification:** Statistically isolate numerical features (e.g., *radius*, *concavity*) that correlate with malignancy.
+2.  **Comparative Profiling:** Quantify differences between benign and malignant cases using rigorous hypothesis testing.
+3.  **Visual Evidence:** Produce data-driven visualizations to communicate risk factors.
 
-- Loaded dataset and assigned meaningful column names.  
-- Removed unnecessary columns (like `ID`).  
-- Converted `diagnosis` into factor and numeric formats.  
-- Focused on "_worst" features for predictive power.  
-
----
-
-## Exploratory Data Analysis (EDA)
-
-### Diagnosis Distribution
-
-The dataset contains:
-
-- **357 Benign cases**  
-- **212 Malignant cases**
+### The Dataset
+We utilized the **Wisconsin Diagnostic Breast Cancer (WDBC)** dataset:
+* **Sample Size:** 568 cases (357 Benign, 211 Malignant).
+* **Features:** 32 features reduced to the **10 most salient "worst-case" metrics** (representing the most aggressive cell characteristics).
 
 ---
 
-### Density & Boxplots
+## Key Insights & Findings
 
-Visualized key features:
+| Feature | Clinical Observation | Statistical Impact |
+| :--- | :--- | :--- |
+| **Concave Points (Worst)** | Irregular shapes indicate aggression. | **+145%** higher in malignant cases. ($p < 1e^{-57}$) |
+| **Perimeter (Worst)** | Outer boundary length correlates with stage. | **+62%** larger in malignant tumors. |
+| **Radius (Worst)** | Larger nuclei suggest malignancy. | **+58%** larger (Mean: 21.12mm vs 13.38mm). |
 
-- `radius_worst`  
-- `concave_points_worst`  
-- `perimeter_worst`  
-
-_Example visualizations included in the `figures/` folder._
-
----
-
-## Top Predictive Features
-
-Based on correlation with `diagnosis_num`, the top 5 features are:
-
-1. `concave_points_worst`  
-2. `perimeter_worst`  
-3. `radius_worst`  
-4. `area_worst`  
-5. `concavity_worst`  
+> **Statistical Verification:** Bonferroni-corrected hypothesis testing confirmed that these differences are significant (all adjusted p-values < 1e-57). The effect size (*d* = -2.69) for concave points is considered **"Extremely Large"** in medical literature.
 
 ---
 
-### Feature Correlation Heatmap
-
-Visualizes correlations among the top features using a heatmap plot.
-
----
-
-### Scatter Matrix of Top Predictive Features
-
-Pairwise scatterplots of the top predictive features help reveal distribution patterns by diagnosis.
-
----
-
-### ROC Curve Analysis
-
-ROC curves were plotted for:
-
-- `concave_points_worst`  
-- `perimeter_worst`  
-- `radius_worst`
-
-_Example included in the `figures/` directory._
-
----
-
-## Statistical Analysis
-
-| Feature               | Cohen's d | Adjusted p-value |
-|------------------------|-----------|------------------|
-| concave_points_worst   | -2.69     | 9.29e-96         |
-| perimeter_worst        | -2.60     | 1.34e-71         |
-| radius_worst           | -2.54     | 6.23e-70         |
-
-- All results show **extremely large effect sizes** and **highly significant p-values**.  
-- Bonferroni correction applied for multiple testing.  
-- Non-parametric Wilcoxon tests confirm the same findings.  
+## Methodology
+1.  **Data Cleaning:** Verified structure, checked for missing values (none found), and focused on "worst" mean values.
+2.  **Exploratory Data Analysis (EDA):** Analyzed density curves and skewness. Identified that malignant tumors possess a right-skewed distribution for radius size.
+3.  **Statistical Analysis:**
+    * **Hypothesis Testing:** Wilcoxon rank-sum test & T-tests.
+    * **Effect Size:** Cohen’s *d* calculation.
+    * **Correlation:** Analyzed multicollinearity between size and texture features.
+4.  **Verification:** Validated findings using ROC (Receiver Operating Characteristic) analysis.
 
 ---
 ## Visualizations
@@ -118,48 +58,48 @@ This section presents all key plots used in the analysis. Each figure highlights
 
 ---
 
-### 📌 Figure 1: Distribution of Mean Radius by Diagnosis  
+### Figure 1: Distribution of Mean Radius by Diagnosis  
 ![Figure 1 Distribution of Mean Radius by Diagnosis](figures/Figure_1_Distribution_of_Mean_Radius_by_Diagnosis.png)  
 > Malignant tumors have larger radius values with a right-skewed distribution.
 
 ---
 
-### 📌 Figure 2: Boxplot of Concave Points Worst  
+### Figure 2: Boxplot of Concave Points Worst  
 ![Figure 2 Boxplot of Concave Points Worst](figures/Figure_2_Boxplot_of_Concave_Points_Worst.png)  
 > Malignant tumors exhibit significantly more extreme concavities than benign.
 
 ---
 
-### 📌 Figure 3: Nuclear Contour Irregularity  
+### Figure 3: Nuclear Contour Irregularity  
 ![Figure 3 Nuclear Contour Irregularity in Malignant Tumors](figures/Figure_3_Nuclear_Contour_Irregularity_in_Malignant_Tumors.png)  
 > Malignant tumors concentrate at higher `concavity_worst` values with minimal overlap.
 
 ---
 
-### 📌 Figure 4: Nuclear Size Distribution by Diagnosis  
+### Figure 4: Nuclear Size Distribution by Diagnosis  
 ![Figure 4 Nuclear Size Distribution by Diagnosis](figures/Figure_4_Nuclear_Size_Distribution_by_Diagnosis.png)  
 > 58% larger modal radius in malignant samples compared to benign ones.
 
 ---
-### 📌 Figure 5: Correlation Matrix of Top Predictive Features  
+### Figure 5: Correlation Matrix of Top Predictive Features  
 ![Figure 5 Correlation Matrix of Top Predictive Features](figures/Figure_5_Correlation_Matrix_of_Top_Predictive_Features.png)  
 > Strong collinearity between size-related features and high diagnostic relevance of `concave_points_worst`.
 
 ---
 
-### 📌 Figure 6: ROC Curve Analysis  
+### Figure 6: ROC Curve Analysis  
 ![Figure 6 ROC Curve Analysis](figures/Figure_6_ROC_Curve_Analysis.png)  
 > ROC curves for top features show high AUC, confirming their predictive performance.
 
 ---
 
-### 📌 Figure 6: Perimeter Distribution by Tumor Type  
+### Figure 6: Perimeter Distribution by Tumor Type  
 ![Figure 7 Perimeter Distribution by Tumor Type](figures/Figure_7_Perimeter_Distribution_by_Tumor_Type.png)  
 > Malignant tumors show higher perimeter values with wider spread.
 
 ---
 
-### 📌 Figure 8: Multivariate Feature Relationships  
+### Figure 8: Multivariate Feature Relationships  
 ![Figure 8 Multivariate Feature Relationships](figures/Figure_8_Multivariate_Feature_Relationships.png)  
 > Top predictive features cluster distinctly by tumor type, enhancing classification clarity.
 
